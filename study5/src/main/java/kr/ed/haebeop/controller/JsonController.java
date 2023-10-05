@@ -17,33 +17,34 @@ public class JsonController {
     //GET
     @GetMapping("getTest/{num}")
     @ResponseBody
-    public TestVO viewTest(@PathVariable int num) throws Exception{
+    public TestVO viewTest(@PathVariable int num) throws Exception {
         TestVO test = testService3.getTest(num);
         return test;
     }
 
-    //POST
-    @PostMapping("insertForm")
-    @ResponseBody
-    public TestVO insertPro(@RequestBody TestVO test) throws Exception{
-        TestVO t = test;
-        testService3.testInsert(test);
-        return t;
+    @GetMapping("insertForm")
+    public String insertForm(Model model) throws Exception {
+        return "/test/testInsert";
     }
 
+    //POST
+    @PostMapping("insertForm")
+    @ResponseBody //@ModelAttribute TestVO test = 일반 객체로 받아오기
+    public TestVO insertPro(@ModelAttribute TestVO test) throws Exception{
+        testService3.testInsert(test);
+        return test;        //@RequestParam("num") int num, @RequestParam("title") int title
+    }
 
     @GetMapping("insertForm2")
-    public String insertForm2(Model model) throws Exception{
+    public String insertForm2(Model model) throws Exception {
         return "/test/testInsert2";
     }
 
     //POST
     @PostMapping("insertForm2")
-    @ResponseBody //@RequestBody - json 객체로 값 받아오기
+    @ResponseBody //@RequestBody = json객체으로 값 받아오기
     public TestVO insertPro2(@RequestBody TestVO test) throws Exception{
         testService3.testInsert(test);
         return test;
     }
-
-
 }

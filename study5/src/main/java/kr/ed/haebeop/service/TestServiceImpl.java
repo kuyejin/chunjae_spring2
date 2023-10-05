@@ -19,12 +19,12 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public TestVO getTest(int num) throws Exception{
-        return null;
+    public TestVO getTest(int num) throws Exception {
+        return testRepository2.getTest(num);
     }
 
     @Override
     public void testInsert(TestVO test) throws Exception {
-
+        testRepository2.testInsert(test);
     }
 }
