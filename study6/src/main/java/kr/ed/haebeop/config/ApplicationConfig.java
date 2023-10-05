@@ -1,9 +1,9 @@
 package kr.ed.haebeop.config;
 
+import kr.ed.haebeop.persistence.UserPersistence;
+import kr.ed.haebeop.persistence.UserPersistenceImpl;
 import kr.ed.haebeop.repository.TestRepository;
 import kr.ed.haebeop.repository.TestRepositoryImpl;
-import kr.ed.haebeop.repository.UserPersistence;
-import kr.ed.haebeop.repository.UserPersistenceImpl;
 import kr.ed.haebeop.service.TestService;
 import kr.ed.haebeop.service.TestServiceImpl;
 import kr.ed.haebeop.service.UserService;
@@ -37,14 +37,5 @@ public class ApplicationConfig {
 
     @Bean
     public CheckVO chk1() { return new CheckVO(); }
-
-    @Bean
-    public UserService userService() { return new UserServiceImpl(); }
-
-    @Bean
-    public UserPersistence userPersistence() { return new UserPersistenceImpl(); }
-
-
-
 
 }

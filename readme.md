@@ -1413,6 +1413,11 @@ public class ApplicationConfig {
 
 # 06. Spring Security 암호화 
 
+## 06-1. 암호화 패턴 설정
+
+## 06-2. 
+
+
 
 
 # 07. 인터셉터와 로그인 처리
