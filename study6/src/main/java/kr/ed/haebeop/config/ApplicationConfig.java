@@ -38,4 +38,12 @@ public class ApplicationConfig {
     @Bean
     public CheckVO chk1() { return new CheckVO(); }
 
+
+    @Bean
+    public UserService userService() { return new UserServiceImpl(); }
+
+    @Bean
+    public UserPersistence userPersistence() { return new UserPersistenceImpl(); }
+
+
 }

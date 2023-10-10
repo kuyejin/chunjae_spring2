@@ -48,11 +48,15 @@
 
     <!-- 멀티파트 업로드 디렉토리 지정 -->
     <beans:bean id="uploadPath" class="java.lang.String">
-        <beans:constructor-arg value="D:\kim\springStudy\study2\src\main\webapp\resources\upload" />
+        <beans:constructor-arg value="D:\kuyejin\spring2\study6\src\main\webapp\resources\upload" />
     </beans:bean>
 
+
+
     <!-- 기본 메인 패키지 및 컨트롤러 패키지 설정 -->
-    <context:component-scan base-package="kr.ed.haebeop.controller" />
+    <!--    <context:component-scan base-package="kr.ed.haebeop.controller" />-->
+    <!--    ApplicationConfig.java를 인식시키려면 haebeop 상위 디렉토리로 지정해야 함-->
+    <context:component-scan base-package="kr.ed.haebeop" />
     <annotation-driven />
 
     <!-- 인터셉터 : 글쓰기와 같은 회원권한을 가진 경우는 반드시 로그인 페이지를 거쳐서 시도할 것  -->
